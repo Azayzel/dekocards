@@ -1,0 +1,20 @@
+<center>
+<div class="jumbotron">
+  <h1>Deck O' Cards</h1>
+  <p class="lead">
+    <img class="img-circle" src="/images/joshlavely.jpg" alt="Deck O' Cards by Josh Lavely"><br>
+    Thank you for taking the time to interview me. I hope this mini app helps showcase my skills to you. :-)
+  </p>
+  <p><a class="btn btn-lg btn-success" ng-click="reShuffle()">Shuffle !</a></p>
+</div>
+
+<div class="row marketing">
+  <div ng-repeat="thing in deck track by $index">
+  <div class="col-xs-2 row container lead">
+  <div>
+  <img src={{thing.link}} class="img-responsive"/>
+  </div>
+  </div>
+  </div>
+</div>
+</center>

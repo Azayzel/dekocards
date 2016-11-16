@@ -1,0 +1,66 @@
+<div class="container">
+<p>This App was created by Josh Lavely.</p>
+<p> I am using https://deckofcardsapi.com/ to get the images for my cards.</p>
+<strong> <p> Below is the code used to shuffle and generate the deck</p></strong>
+<pre>
+
+
+
+// Make card
+function makeCard (rank, suit) {
+	let tempSuit = '';
+	console.log(suit)
+	switch(suit){
+		case "clubs" : tempSuit = 'C'
+			break;
+		case "diamonds" : tempSuit = 'D'
+			break;
+		case "hearts" : tempSuit = 'H'
+			break;
+		case "spades" : tempSuit = 'S'
+			break;
+	}
+    this.suit = suit;
+    this.rank = rank;
+    return this.link = "https://deckofcardsapi.com/static/img/" + this.rank + tempSuit + ".png";
+
+}; 
+
+// CreateDeck
+var deck = new Array(52);
+
+function createDeck() {
+    let ranks = new Array("A", "2", "3", "4", "5", "6", "7", "8", "9", "10",
+                    "J", "Q", "K");
+    let suits = new Array("clubs", "diamonds", "hearts", "spades");
+    for (let i = 0; i < suits.length; i++) {
+        for ( let j = 0; j < ranks.length; j++) {
+            deck[i*ranks.length + j] = new makeCard(ranks[j], suits[i]);
+        }
+    }
+};
+
+
+// Shuffle Deck
+function shuffle(a) {
+    for (let i = a.length; i; i--) {
+        let j = Math.floor(Math.random() * i);
+        [a[i - 1], a[j]] = [a[j], a[i - 1]];
+    }
+}
+
+//run
+createDeck();
+shuffle(deck);
+
+$scope.reShuffle = function reShuffle(){
+
+createDeck();
+shuffle(deck);
+}
+$scope.deck = deck;
+
+</pre>
+<p> I hope you enjoyed it! </p>
+<p>Send me an <a href="mailto:josh.lavely@gmail.com">email</a></p>
+</div>
